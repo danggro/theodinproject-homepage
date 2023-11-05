@@ -1,0 +1,10 @@
+:root {
+  --primary: #4b125c;
+  --secondary: #a02a63;
+  --tertiary: #ffa258;
+  --white: #fff7c2;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+}
