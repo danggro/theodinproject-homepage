@@ -32,6 +32,7 @@ h2 {
 }
 
 header {
+  max-width: 900px;
   align-self: center;
   display: flex;
   padding: 50px 0;
@@ -80,7 +81,6 @@ header figcaption {
 }
 
 #about {
-  max-width: 550px;
   min-width: 300px;
   background-color: var(--white);
   padding: 25px 35px;
@@ -180,7 +180,7 @@ main h1 {
 
 footer {
   display: flex;
-  padding: 30px;
+  padding: 30px 0;
   color: var(--white);
 }
 
@@ -190,7 +190,6 @@ footer::after {
   bottom: 0;
   width: 100%;
   height: 480px;
-
   left: 0;
   z-index: -1;
   position: absolute;
@@ -212,6 +211,7 @@ footer::after {
 
 #contact > div:nth-last-child(2) {
   margin-top: -15px;
+  width: fit-content;
 }
 
 #contact > div img {
@@ -219,7 +219,6 @@ footer::after {
 }
 
 #contact > div:last-child {
-  display: flex;
   gap: 20px;
 }
 
@@ -228,7 +227,6 @@ footer::after {
 }
 
 footer > picture {
-  min-width: 300px;
   max-width: calc(0.55 * 900px);
   box-shadow: var(--box-shadow);
 }
@@ -241,6 +239,69 @@ footer > picture img {
   display: block;
 }
 
+@media screen and (max-width: 768px) {
+  header figure {
+    position: absolute;
+    transform: scale(0.9);
+    left: 2%;
+    top: 1.5%;
+    box-shadow: none;
+  }
+
+  header figure img {
+    aspect-ratio: 1;
+  }
+
+  header figcaption {
+    transform: translateX(20%);
+    bottom: 86%;
+    left: 100%;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+  }
+
+  #about {
+    margin-inline: 50px;
+    margin-top: 50px;
+  }
+
+  #about h1 {
+    margin-left: 240px;
+  }
+
+  #about p {
+    float: right;
+  }
+
+  #about p::before {
+    content: '';
+    display: block;
+    width: 240px;
+
+    height: 200px;
+    background-color: transparent;
+    float: left;
+  }
+
+  #about > div {
+    justify-content: center;
+  }
+
+  main {
+    padding: 30px 0;
+  }
+  footer {
+    align-items: center;
+  }
+
+  footer::after {
+    height: 430px;
+  }
+
+  footer picture img {
+    aspect-ratio: 3.5/4;
+  }
+}
+
 @media screen and (max-width: 480px) {
   h1 {
     text-align: center;
@@ -249,6 +310,50 @@ footer > picture img {
   header {
     flex-direction: column;
     padding: 30px 0;
+  }
+
+  header figure {
+    position: relative;
+    transform: scale(1);
+  }
+
+  header figure img {
+    aspect-ratio: 1;
+  }
+
+  header figcaption {
+    transform: translateX(0);
+    bottom: 15px;
+    left: 50%;
+    text-shadow: none;
+  }
+
+  #about {
+    margin-inline: 0;
+    margin-top: 0;
+  }
+
+  #about h1 {
+    margin-left: 0;
+  }
+
+  #about p {
+    float: left;
+  }
+
+  #about p::before {
+    display: none;
+  }
+
+  #about > div {
+    justify-content: center;
+  }
+  header figure {
+    position: relative;
+    box-shadow: var(--box-shadow);
+  }
+  header figure img {
+    aspect-ratio: 5/6;
   }
 
   header::after {
@@ -264,10 +369,6 @@ footer > picture img {
     margin-right: 0;
   }
 
-  main {
-    padding: 30px 0;
-  }
-
   footer {
     flex-direction: column;
     gap: 30px;
@@ -275,8 +376,8 @@ footer > picture img {
 
   footer::after {
     height: 600px;
-    bottom: 0;
   }
+
   #contact {
     padding-right: 0;
   }
